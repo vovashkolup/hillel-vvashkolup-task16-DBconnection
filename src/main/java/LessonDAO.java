@@ -16,10 +16,9 @@ public class LessonDAO {
         try {
             Connection connection = DataBaseConnection.getConnection();
             PreparedStatement ps = connection.
-                    prepareStatement("INSERT INTO lesson (id, name, homework_id) VALUES (?,?,?)");
-            ps.setInt(1, lesson.getId());
-            ps.setString(2, lesson.getName());
-            ps.setInt(3, lesson.getHomework_id());
+                    prepareStatement("INSERT INTO lesson (name, homework_id) VALUES (?,?)");
+            ps.setString(1, lesson.getName());
+            ps.setInt(2, lesson.getHomework_id());
 
             status = ps.executeUpdate();
             connection.close();

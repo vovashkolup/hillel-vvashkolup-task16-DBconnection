@@ -31,6 +31,11 @@ public class Lesson {
         return name;
     }
 
+    public Lesson(String name, int homework_id) {
+        this.name = name;
+        this.homework_id = homework_id;
+    }
+
     @Override
     public String toString() {
         return "Lesson{" +
